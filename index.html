@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f7f9fc; margin: 40px; }
+        h1 { text-align: center; color: #2c3e50; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; background: white; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #34495e; color: white; }
+    </style>
+</head>
+<body>
+    <h1>📚 Library Dashboard</h1>
+
+    <h2>Books</h2>
+    <table>
+        <tr><th>ID</th><th>Title</th><th>Author</th></tr>
+        {% for book in books %}
+        <tr><td>{{ book.id }}</td><td>{{ book.title }}</td><td>{{ book.author }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <h2>Users</h2>
+    <table>
+        <tr><th>ID</th><th>Name</th></tr>
+        {% for user in users %}
+        <tr><td>{{ user.id }}</td><td>{{ user.name }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <h2>Borrowed Books</h2>
+    <table>
+        <tr><th>User</th><th>Book</th></tr>
+        {% for b in borrowed %}
+        <tr><td>{{ b.user }}</td><td>{{ b.book }}</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
